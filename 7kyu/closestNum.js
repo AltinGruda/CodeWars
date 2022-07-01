@@ -12,5 +12,5 @@
 // 40
 
 const closestMultiple10 = num => {
-    return num%10>=5? num+(10 - num%10) : num-(num%10)
-};
+    return Math.round(num/10)*10;
+  };
