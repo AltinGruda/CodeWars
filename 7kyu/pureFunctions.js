@@ -18,5 +18,8 @@ function solution(arr, options) {
     }
     
     return arr1;
+
+    //if not for pure functions thing, i would have solve this with map
+    //arr.map(n => n + 2 * options.modifier)
   }
   
