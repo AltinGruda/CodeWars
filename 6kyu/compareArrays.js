@@ -34,3 +34,15 @@ function comp(array1, array2){
     array2.sort( (a,b) => a-b);
     return array1.map( num => num*num).every( (num, index) => num === array2[index])
   }
+
+
+  //another interesting solution i came with: REDUCE, if elements are all square root of another array's elements, then their value should be equal
+  function comp(array1, array2){
+    if(array1 === [] || array2 === [] || array1 === null || array2 === null){
+      return false;
+    }
+  
+    let arrayToSum = array2.map( num => Math.sqrt(num))
+    
+    return array1.reduce( (acc, c) => acc + c, 0) === arrayToSum.reduce( (acc, c) => acc + c, 0)
+  }
