@@ -11,17 +11,16 @@
 // is_prime(2)  /* true  */
 // is_prime(-1) /* false */
 
-function isPrime(num){
-    //P: number
-    //R: boolean
-    //E
-    //P chech 6n+1 === num
-    if(num % 2 === 0 && num !== 2){
-        return false
+function isPrime(num) {
+    if (num < 2) return false;
+    const limit = Math.sqrt(num);
+    for (let i = 2; i <= limit; ++i) {
+      if (num % i === 0) {
+        return false;
+      }
     }
-
-    return num === 2 || num === 3 ? true : (6*(num/6) + num%6 === num ||  6*(num/6) - Math.floor(num%6) === num)
-}
+    return true;
+  }
 
 isPrime(1)  /* false */
 isPrime(2)  /* true  */
