@@ -22,21 +22,7 @@
 // Note
 // consecutive strings : follow one after another without an interruption
 
-function longestConsec(arr, k){
-    //P: array, integer
-    //R: string
-    //E: 
-            // treefoling   (length 10)  concatenation of strarr[0] and strarr[1]
-            // folingtrashy ("      12)  concatenation of strarr[1] and strarr[2]
-            // trashyblue   ("      10)  concatenation of strarr[2] and strarr[3]
-            // blueabcdef   ("      10)  concatenation of strarr[3] and strarr[4]
-            // abcdefuvwxyz ("      12)  concatenation of strarr[4] and strarr[5]
-    //P:
-    //  - loop from 0  to i <= arr.length-k (gets the last str when k === 1, and ignores last when k > 1 )
-    //  - slice from i to i+k
-    //  - tempstr join the temp array 
-    //  - test if tempstr length > longest.length
-    //  - if yes longest = tempstr if not ignore
+function longestConsec(strarr, k){
     if(strarr.length === 0  || k > strarr.length || k<= 0)
         return "";
     let longest = "";
