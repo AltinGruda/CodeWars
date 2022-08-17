@@ -27,7 +27,7 @@ function solution(number){
             number -= roman[num]
         }
     }
-    ans;
+    return ans;
 }
 
 solution(15) // 'XV'
