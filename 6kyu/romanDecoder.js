@@ -21,7 +21,7 @@ function solution (roman) {
     const symbols = {
         'I': 1,
         'V': 5, 
-        'X': 10, 
+        'X': 10,
         'L': 50,
         'C': 100, 
         'D': 500, 
