@@ -12,19 +12,23 @@
 // part1:  c   d   w         = cdw
 // part2:    o   e   a r s   = oears
 function isMerge(s, part1, part2) {
-    let count = 0
-    let stringLength = s.length
+    if (s.length !== part1.length + part2.length) {
+        return false;
+    }
 
-    part1.split('').forEach( letter => {
-        if(s.indexOf(letter) !== -1)
-            count++;
-    })
-    part2.split('').forEach( letter => {
-        if(s.indexOf(letter) !== -1)
-            count++;
-    })
+    if (!s.length) {
+        return true;
+    }
 
-    return part1 === part2 ? false : count === stringLength
+    if (part1[0] === s[0] && isMerge(s.slice(1), part1.slice(1), part2)) {
+        return true;
+    }
+
+    if (part2[0] === s[0] && isMerge(s.slice(1), part1, part2.slice(1))) {
+        return true;
+    }
+
+    return false;
 }
 
 isMerge('codewars', 'code', 'wars') // true
