@@ -13,23 +13,18 @@
 // 0 <= x <= 4
 // 0 <= y <= 4
 
-function points(games){
+function points(games) {
     let points = 0;
 
-    for(let i = 0; i < games.length; i++){
+    for (let i = 0; i < games.length; i++) {
         let x = Number(games[i][0]);
         let y = Number(games[i][2]);
 
-        if(x > y){
-            points += 3;
-        } else if(x === y){
-            points += 1;
-        }
-
+        points += x > y ? 3 : 1
     }
 
     return points
 }
 
-points(['1:0','2:0','3:0','4:0','2:1','3:1','4:1','3:2','4:2','4:3']);
-points(["1:1","2:2","3:3","4:4","2:2","3:3","4:4","3:3","4:4","4:4"]);
+points(['1:0', '2:0', '3:0', '4:0', '2:1', '3:1', '4:1', '3:2', '4:2', '4:3']);
+points(["1:1", "2:2", "3:3", "4:4", "2:2", "3:3", "4:4", "3:3", "4:4", "4:4"]);
