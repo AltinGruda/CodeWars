@@ -9,17 +9,17 @@
 // The array will always have at least 2 elements1 and all elements will be numbers. The numbers will also all be unique and in ascending order. The numbers could be positive or negative and the first non-consecutive could be either too!
 
 
-function firstNonConsecutive (arr) {
-    for(let i = 0; i < arr.length - 1; i++){
-        if(arr[i] + 1 !== arr[i+1])
-            return arr[i+1]
+function firstNonConsecutive(arr) {
+    for (let i = 0; i < arr.length - 1; i++) {
+        if (arr[i] + 1 !== arr[i + 1])
+            return arr[i + 1]
     }
 
     return null
 }
 
-firstNonConsecutive([1,2,3,4,6,7,8]) // 6
-firstNonConsecutive([5,6,7,1,2,3])
-firstNonConsecutive([ -3, -1, 0, 1, 2 ]) // -1
-firstNonConsecutive([ 1, 2, 3, 4 ]) // null
+firstNonConsecutive([1, 2, 3, 4, 6, 7, 8]) // 6
+firstNonConsecutive([5, 6, 7, 1, 2, 3])
+firstNonConsecutive([-3, -1, 0, 1, 2]) // -1
+firstNonConsecutive([1, 2, 3, 4]) // null
 firstNonConsecutive([-10, -9, -8, -7, -6, -5, -4, -2]) // -4
