@@ -7,28 +7,10 @@
 // * [5]                             -> min = 5, max = 5
 // Notes
 // You may consider that there will not be any empty arrays/vectors.
-var min = function(list){
-    let min = list[0]
-
-    for(let i = 0; i < list.length; i++){
-        if(list[i] < min){
-            min = list[i]
-        }
-    }
-
-    return min
-    //or could have done Math.min([...list])
+const min = function (list) {
+    return Math.min([...list])
 }
 
-var max = function(list){
-    let max = list[0]
-
-    for(let i = 0; i < list.length; i++){
-        if(list[i] > max){
-            max = list[i];
-        }
-    }
-
-    return max
-    //or could have done Math.max([...list])
+const max = function (list) {
+    return Math.max([...list])
 }
