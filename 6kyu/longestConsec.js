@@ -22,14 +22,14 @@
 // Note
 // consecutive strings : follow one after another without an interruption
 
-function longestConsec(strarr, k){
-    if(strarr.length === 0  || k > strarr.length || k<= 0)
-        return "";
-    let longest = "";
-    for(let i = 0;i <= strarr.length-k; i++){
-        let tempArr = strarr.slice(i, i+k);
+function longestConsec(strarr, k) {
+    if (strarr.length === 0 || k > strarr.length || k <= 0)
+        return '';
+    let longest = '';
+    for (let i = 0; i <= strarr.length - k; i++) {
+        let tempArr = strarr.slice(i, i + k);
         let tempStr = tempArr.join('');
-        if(tempStr.length > longest.length)
+        if (tempStr.length > longest.length)
             longest = tempStr;
     }
 
