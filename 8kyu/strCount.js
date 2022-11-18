@@ -12,16 +12,7 @@
 // The first argument can be an empty string
 // In languages with no distinct character data type, the second argument will be a string of length 1
 function strCount(str, letter) {
-  if (str === "") return 0;
-  let count = 0;
-  let strArr = str.split("");
-  for (let i = 0; i < strArr.length; i++) {
-    if (strArr[i] === letter) {
-      count++;
-    }
-  }
-
-  return count;
+  return str.split(letter).length - 1;
 }
 
 strCount("Hello", "o"); //, 1
