@@ -13,7 +13,7 @@ function between(a, b) {
       arr[j] = i;
     }
   }
-  console.log(arr);
+  return arr;
 }
 
 between(1, 4);
