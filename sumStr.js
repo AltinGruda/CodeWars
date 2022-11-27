@@ -13,10 +13,7 @@
 
 // Inputs and the expected output will never exceed the signed 32-bit integer limit (2^31 - 1)
 function sumStr(a, b) {
-  let firstNum = Number(a);
-  let secondNum = Number(b);
-
-  return String(firstNum + secondNum);
+  return String(Number(a) + Number(b));
 }
 
 sumStr("4", "5");
