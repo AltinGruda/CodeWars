@@ -9,11 +9,10 @@
 // ball2.ballType     //=> "super"
 
 const Ball = function (ballType) {
-  if (ballType === "" || ballType === undefined) return "regular";
-
-  return ballType;
+  this.ballType = ballType || "regular";
 };
 const ball1 = new Ball().ballType; //, "regular"
-new Ball("super").ballType; //, "super"
+const ball2 = new Ball("super").ballType; //, "super"
 
 console.log(ball1);
+console.log(ball2);
