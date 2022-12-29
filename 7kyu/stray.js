@@ -8,11 +8,13 @@
 // [1, 1, 2] ==> 2
 // [17, 17, 3, 17, 17, 17, 17] ==> 3
 function stray(numbers) {
-  numbers.sort((a, b) => a - b);
+  for (let i = 0; i < numbers.length; i++) {
+    if (numbers.indexOf(numbers[i]) === numbers.lastIndexOf(numbers[i])) {
+      return numbers[i];
+    }
+  }
 
-  return numbers[numbers.length - 1] === numbers[numbers.length - 2]
-    ? numbers[0]
-    : numbers[numbers.length - 1];
+  return -1;
 }
 
 stray([1, 1, 2]); // ==> 2)
