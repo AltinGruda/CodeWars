@@ -12,3 +12,6 @@
 function findNextSquare(sq) {
     return Math.sqrt(sq) % 1 ? -1 : Math.pow(Math.sqrt(sq) + 1, 2)
 }
+
+// If the first number is not a perfect square and it has a remainder (meaning it is not an integr), return -1
+// if it is a perfect square we find the next perfect square by taking it's suqare root, increasing it by one and increasing it into the power of 2 to give us the next perfect square.
