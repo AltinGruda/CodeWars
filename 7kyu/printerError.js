@@ -15,18 +15,17 @@
 // s="aaaxbbbbyyhwawiwjjjwwm"
 // printer_error(s) => "8/22"
 function printerError(s) {
-    let count = 0;
-    s.split('').forEach(letter => {
-        if (!(letter.codePointAt(0) >= 97 && letter.codePointAt(0) <= 109))
-            count++;
-    })
+  let count = 0;
+  s.split("").forEach((letter) => {
+    if (!(letter.codePointAt(0) >= 97 && letter.codePointAt(0) <= 109)) count++;
+  });
 
-    return `${count}/${s.length}`
+  return `${count}/${s.length}`;
 }
 
 // Examples:
-s = "aaabbbbhaijjjm"
-printerError(s) // => "0/14"
+s = "aaabbbbhaijjjm";
+printerError(s); // => "0/14"
 
-s = "aaaxbbbbyyhwawiwjjjwwm"
-printerError(s) // => "8/22"
+s = "aaaxbbbbyyhwawiwjjjwwm";
+printerError(s); // => "8/22"
