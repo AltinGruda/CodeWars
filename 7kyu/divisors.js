@@ -5,14 +5,14 @@
 // divisors(25); // should return [5]
 // divisors(13); // should return "13 is prime"
 function divisors(integer) {
-    let divs = []
-    for(let i = 2; i < integer; i++){
-        if(integer % i === 0){
-            divs.push(i)
-        }
+  let divs = [];
+  for (let i = 2; i < integer; i++) {
+    if (integer % i === 0) {
+      divs.push(i);
     }
+  }
 
-    console.log(divs.length ? divs : `${integer} is prime`)
+  return divs.length ? divs : `${integer} is prime`;
 }
 
 divisors(12); // should return [2,3,4,6]
