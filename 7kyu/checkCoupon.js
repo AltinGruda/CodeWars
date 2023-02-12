@@ -11,10 +11,10 @@
 // checkCoupon("123", "123", "July 9, 2015", "July 9, 2015")  ===  true
 // checkCoupon("123", "123", "July 9, 2015", "July 2, 2015")  ===  false
 function checkCoupon(enteredCode, correctCode, currentDate, expirationDate) {
-  if (enteredCode !== correctCode) return false;
-  let date1 = new Date(expirationDate);
-  let date2 = new Date(currentDate);
-  return Math.floor((date1 - date2) / (1000 * 60 * 60 * 24)) < 0 ? false : true;
+  return (
+    enteredCode === correctCode &&
+    Date.parse(expirationDate) >= Date.parse(currentDate)
+  );
 }
 
 checkCoupon("123", "123", "July 9, 2015", "July 9, 2015"); // ===  true
