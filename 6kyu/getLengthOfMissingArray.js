@@ -16,25 +16,17 @@
 
 // I have created other katas. Have a look if you like coding and challenges.
 function getLengthOfMissingArray(arrayOfArrays) {
-  console.log(arrayOfArrays);
-  if (
-    arrayOfArrays === null ||
-    arrayOfArrays === [] ||
-    arrayOfArrays === undefined ||
-    arrayOfArrays.length === 0
-  )
+  const lengths = (arrayOfArrays || [])
+    .map((a) => (a ? a.length : 0))
+    .sort((a, b) => a - b);
+
+  if (lengths.includes(0)) {
     return 0;
-  let arr = arrayOfArrays.sort((a, b) => {
-    if (a && b) {
-      return a.length - b.length;
-    }
-  });
-  for (let i = 0; i < arr.length - 1; i++) {
-    if (!arr[i] || arr[i] === null || arr[i].length === 0) {
-      return 0;
-    }
-    if (arr[i] && arr[i + 1] && arr[i + 1].length - arr[i].length > 1) {
-      return arr[i].length + 1;
+  }
+
+  for (let i = 0; i < lengths.length - 1; i++) {
+    if (lengths[i] + 1 !== lengths[i + 1]) {
+      return lengths[i] + 1;
     }
   }
 
