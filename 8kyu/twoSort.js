@@ -4,11 +4,7 @@
 
 // You should not remove or add elements from/to the array.
 function twoSort(s) {
-  return s
-    .sort()[0]
-    .split("")
-    .map((char, idx, arr) => (idx !== arr.length - 1 ? char + "***" : char))
-    .join("");
+  return s.sort()[0].split("").join("***");
 }
 
 twoSort([
