@@ -51,5 +51,5 @@ solve("khrushchev"); //,38);
 solve("strength"); //,57);
 solve("catchphrase"); //,73);
 solve("twelfthstreet"); //,103);
-solve("mischtschenkoana"); //,80);
+solve("mischtschenkoana"); //,80);vvvvvv
 solve("az"); //,26);
