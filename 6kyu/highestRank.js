@@ -30,7 +30,7 @@
 // }
 
 
-const highestRank = arr => {console.log(arr.sort((a,b) => arr.filter(val => val === b).length - arr.filter(val => val === a).length)[0] || b - a)}
+const highestRank = arr => arr.sort((a,b) => arr.filter(val => val === b).length - arr.filter(val => val === a).length || b - a)[0]
 highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12]); //12
 highestRank([12, 10, 8, 12, 7, 6, 4, 10, 12, 10]); //12
 highestRank([12, 10, 8, 8, 3, 3, 3, 3, 2, 4, 10, 12, 10]); //3
