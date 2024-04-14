@@ -17,6 +17,16 @@ function tripledouble(num1, num2) {
     return 0;
 }
 
+function tripleDoubleRegex(num1, num2) {
+    for(let i = 0; i <= 9; i++){
+        if(new RegExp(`${i}{3}`).test(num1) && new RegExp(`${i}{2}`).test(num2)){
+            return 1;
+        }
+    }
+
+    return 0;
+}
+
 
 
 console.log(tripledouble(451999277, 41177722899)); // Output: 1
