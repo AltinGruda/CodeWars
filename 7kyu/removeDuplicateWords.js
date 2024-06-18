@@ -10,7 +10,7 @@
 // 'alpha beta gamma delta'
 
 function removeDuplicateWords (s) {
-    return s.split(' ').filter((word,idx, arr) => arr.indexOf(word) === idx).join(' ');
+    return [...new Set(s.split(' '))].join(' ');
 }
 
 removeDuplicateWords('alpha beta beta gamma gamma gamma delta alpha beta beta gamma gamma gamma delta'); // 'alpha beta gamma delta'
