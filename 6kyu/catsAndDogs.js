@@ -1,0 +1,33 @@
+// Consider an array containing cats and dogs. Each dog can catch only one cat, but cannot catch a cat that is more than n elements away. Your task will be to return the maximum number of cats that can be caught.
+
+// For example:
+
+// solve(['D','C','C','D','C'], 2) = 2, because the dog at index 0 (D0) catches C1 and D3 catches C4. 
+// solve(['C','C','D','D','C','D'], 2) = 3, because D2 catches C0, D3 catches C1 and D5 catches C4.
+// solve(['C','C','D','D','C','D'], 1) = 2, because D2 catches C1, D3 catches C4. C0 cannot be caught because n == 1.
+// solve(['D','C','D','D','C'], 1) = 2, too many dogs, so all cats get caught!
+// Do not modify the input array.
+
+// More examples in the test cases. Good luck!
+
+function solve(arr,n){
+  return arr.reduce((acc, c, index) => {
+    if(c === 'D') {
+        for(let i = index - n; i <= index + n; i++){
+            if(arr[i] === 'C'){
+                arr[i] = 0;
+                return acc+1;
+            }
+        }
+    }
+    return acc;
+  }, 0)
+}
+
+solve(['D','C','C','D','C'],1) //,2);
+solve(['C','C','D','D','C','D'],2) //,3);
+solve(['C','C','D','D','C','D'],1) //,2);
+solve(['D','C','D','C','C','D'],3) //,3);
+solve(['C','C','C','D','D'],3) //,2);
+solve(['C','C','C','D','D'],2) //,2);
+solve(['C','C','C','D','D'],1) //,1);
