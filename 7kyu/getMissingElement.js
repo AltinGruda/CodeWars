@@ -10,21 +10,10 @@
 
 function getMissingElement(arr){
     arr.sort();
-    if(arr[0] !== 0) {
-        return 0;
-    } else if(arr[arr.length - 1] !== 9){
-        return 9;
-    }
-    let i = 0;
-    let left = 0;
-    let right = 1;
-    while(i < arr.length) {
-      if(arr[right] - arr[left] > 1){
-        return arr[left] + 1;
-      }
-      left++;
-      right++;
-      i++;
+    for(let i = 0; i <= 9; i++){
+        if(arr[i] !== i){
+            return i;
+        }
     }
 }
 
