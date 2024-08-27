@@ -5,5 +5,5 @@ function drawStairs(n) {
       result.push(`${' '.repeat(i)}I`);
     }
     
-    return result.join("\n");
+    return result.join("\n")
 }
